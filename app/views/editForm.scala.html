@@ -1,0 +1,33 @@
+@(id: Int, surname: String, date: Date )
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@main {
+
+<h1>Edit customer</h1>
+
+@form(routes.Application.update(id)) {
+
+<form>
+    <fieldset>
+
+        Surname: <input type="text" name="surname" value=@surname><br>
+        Birth Date: <input datetime="YYYY-MM-DDThh:mm:ssTZD" name="date" value="@date">
+
+    </fieldset>
+</form>
+
+<div class="actions">
+    <input type="submit" value="Save this customer" class="btn primary"> or
+    <a href="@routes.Application.index()" class="btn">Cancel</a>
+</div>
+
+}
+
+@form(routes.Application.delete(id), 'class -> "topRight") {
+<input type="submit" value="Delete this customer" class="btn danger">
+}
+
+}

@@ -1,0 +1,11 @@
+
+# Users
+
+users:
+
+    - !!models.User
+        email:      rafa@apollo.com
+        name:       Rafał Masal
+        password:   secret
+    
+

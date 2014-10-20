@@ -1,0 +1,34 @@
+@(list: List[Integer])
+
+
+
+@main {
+
+@if(list.equals(0)) {
+
+<div class="well">
+    <em>Nothing to display</em>
+</div>
+
+} else {
+
+<table class="customers zebra-striped">
+
+    <tbody>
+
+    @for( customersIds <- list) {
+    <tr>
+        <td><a href="@routes.Application.edit(customersIds)">@customersIds</a></td>
+    </tr>
+    }
+
+    </tbody>
+</table>
+
+
+
+
+    }
+
+
+}

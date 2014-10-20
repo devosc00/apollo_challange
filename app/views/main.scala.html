@@ -1,0 +1,28 @@
+@(content: Html)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recruitment Task</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+</head>
+<body>
+
+<header class="topbar">
+    <h1 class="fill">
+        <a href="@routes.Application.index()">
+            Play application &mdash; Customers Service
+        </a>
+        <a href="@routes.Application.logout()" class="btn danger" style="float: right;">Logout</a>
+            <a class="btn success" id="add" href="@routes.Application.create()"style="float: right;">Add customer</a>
+        <a href="@routes.Application.refreshIds()" class="btn" style="float: right;">Refresh List</a>
+    </h1>
+</header>
+
+<section id="main">
+    @content
+</section>
+
+</body>
+</html>

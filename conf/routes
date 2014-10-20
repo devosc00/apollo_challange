@@ -1,0 +1,26 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Default path will just redirect to the customers list
+
+GET     /login                      controllers.Application.login()
+POST    /login                      controllers.Application.authenticate()
+GET     /logout                     controllers.Application.logout()
+GET     /                           controllers.Application.index()
+GET     /list                       controllers.Application.list()
+GET     /refresh                    controllers.Application.refreshIds()
+
+# Add customer
+GET     /customers/new              controllers.Application.create()
+POST    /customers                  controllers.Application.save()
+
+# Edit existing customer
+GET     /customers/:id              controllers.Application.edit(id:Int)
+POST    /customers/:id              controllers.Application.update(id:Int)
+
+# Delete a customer
+POST    /customers/:id/delete       controllers.Application.delete(id:Int)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

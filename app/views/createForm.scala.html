@@ -1,0 +1,27 @@
+@(customerForm: Form[Customer])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@main {
+
+<h1>Add a customer</h1>
+
+@form(routes.Application.save()) {
+
+<fieldset>
+    <input type="hidden" name="id" value="100">
+    @inputText(customerForm("surname"), '_label -> "Surname")
+    @inputText(customerForm("bornDate"), '_label -> "Born Date")
+
+</fieldset>
+
+<div class="actions">
+    <input type="submit" value="Create this customer" class="btn primary"> or
+    <a href="@routes.Application.index()" class="btn">Cancel</a>
+</div>
+
+}
+
+}
