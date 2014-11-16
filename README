@@ -1,4 +1,8 @@
 This is your new Play application
 =====================================
 
+Play 2 app, Logging - consuming WSDL - CRUD.
+Java, H2, Twirl
+
+
 This file will be packaged with your application, when using `play dist`.
